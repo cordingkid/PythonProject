@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+	function fn_emp_add(){
+		window.location.href = "emp_add";
+	}
+</script>
+<body>
+	<h2>E.M.P List</h2>
+	<table border="1" style="text-align: center; box-shadow: 5px 5px 5px gray; border-collapse: collapse; width: 400px;">
+		<tr>
+			<th>사번</th>
+			<th>이름</th>
+			<th>성별</th>
+			<th>주소</th>
+		</tr>
+		{% for i in list %}
+			<tr>
+				<td><a href="emp_detail?e_id={{i.e_id}}">{{i.e_id}}</a></td>
+				<td>{{i.e_name}}</td>
+				<td>{{i.sex}}</td>
+				<td>{{i.addr}}</td>
+			</tr>
+		{% endfor %}
+	</table>
+	<hr>
+	<input type="button" value="추가" onclick="fn_emp_add()">
+</body>
+</html>

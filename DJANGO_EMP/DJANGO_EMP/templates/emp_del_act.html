@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+	var cnt = "{{cnt}}";
+	if(cnt == '1'){
+		alert("성공적으로 삭제 되었습니다.")
+		window.location.href = "/";	
+	}else{
+		alert('실패')
+		window.history.back();	
+	}
+</script>
+</body>
+</html>

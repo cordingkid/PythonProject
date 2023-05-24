@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>E.M.P Detail</h2>
+	<form action="emp_del_act" method="post" name="frm">
+		<input type="hidden" value="{{empOne.e_id}}" name="id">
+	</form>
+	<table border="1" style="text-align: center; box-shadow: 5px 5px 5px gray; border-collapse: collapse; width: 400px;">
+		<tr>
+			<td>사번</td>
+			<td>{{empOne.e_id}}</td>
+		</tr>
+		<tr>
+			<td>이름</td>
+			<td>{{empOne.e_name}}</td>
+		</tr>
+		<tr>
+			<td>성별</td>
+			<td>{{empOne.sex}}</td>
+		</tr>
+		<tr>
+			<td>주소</td>
+			<td>{{empOne.addr}}</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input type="button" value="수정" onclick="fn_mod()">
+				<input type="button" value="삭제" onclick="fn_del()">
+			</td>
+		</tr>
+	</table>
+	<hr>
+	<script type="text/javascript">
+		function fn_mod(who){
+			location.href = "emp_mod?e_id={{empOne.e_id}}";
+		}
+		
+		function fn_del(who){
+			if(confirm('정말 삭제 하시겠습니까?')){
+				document.frm.submit();
+			}
+		}
+	</script>
+</body>
+</html>
